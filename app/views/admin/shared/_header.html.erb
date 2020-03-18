@@ -1,0 +1,9 @@
+<header>
+  <span class="logo-mark">暇な文系学生</span>
+  <%if current_admin %>
+    <%= link_to 'ログアウト', :admin_session, method: :delete %>
+    <%= link_to 'ポートフォリオ', :admin_portfolios %>
+  <%else%>
+    <%= link_to 'ログイン', :admin_login %>
+  <%end%>
+</header>

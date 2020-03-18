@@ -1,0 +1,8 @@
+<%= link_to  "追加", :new_admin_portfolio %>
+<% @portfolios.each do |p| %>
+  <%= p.name %>
+  <%= p.detail %>
+  <%= link_to  "編集", [:edit, :admin, p] %>
+  <%= link_to  "削除", [:admin, p], method: :delete,
+  data: { confirm: '本当に削除してもよろしいですか？' } %>
+<% end %>
