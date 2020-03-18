@@ -1,0 +1,3 @@
+<div><%= @article.title %></div>
+<div><%= @article.content.html_safe %></div>
+<%= link_to  "編集", [:edit, :admin, @article] %>

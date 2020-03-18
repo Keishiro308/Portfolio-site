@@ -1,0 +1,12 @@
+<div class="form-group">
+  <%= f.label :image, "サムネイル" %>
+  <%= f.file_field :image, class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= f.label :title, "タイトル" %>
+  <%= f.text_field :title, class: 'form-control' %>
+</div>
+<div>
+  <%= f.label :content, "本文" %>
+  <%= f.text_area :content, id: 'summernote' %>
+</div>

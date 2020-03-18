@@ -3,6 +3,7 @@
   <%if current_admin %>
     <%= link_to 'ログアウト', :admin_session, method: :delete %>
     <%= link_to 'ポートフォリオ', :admin_portfolios %>
+    <%= link_to  "記事", :admin_articles %>
   <%else%>
     <%= link_to 'ログイン', :admin_login %>
   <%end%>

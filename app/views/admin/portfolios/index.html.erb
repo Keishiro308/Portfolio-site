@@ -2,6 +2,7 @@
 <% @portfolios.each do |p| %>
   <%= p.name %>
   <%= p.detail %>
+  <%= link_to  "#{p.link}", p.link %>
   <%= link_to  "編集", [:edit, :admin, p] %>
   <%= link_to  "削除", [:admin, p], method: :delete,
   data: { confirm: '本当に削除してもよろしいですか？' } %>

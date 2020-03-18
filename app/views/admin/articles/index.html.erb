@@ -1,0 +1,8 @@
+<% @title = '記事投稿' %>
+<h1><%= @title %></h1>
+
+<% @articles.each do |article| %>
+  <div>
+  <%= link_to article.title, [:admin, article] %>
+  </div>
+<% end %>

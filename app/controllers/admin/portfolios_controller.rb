@@ -45,6 +45,6 @@ class Admin::PortfoliosController < Admin::Base
 
   private
   def portfolio_params
-    params.require(:portfolio).permit(:name, :detail, :image)
+    params.require(:portfolio).permit(:name, :detail, :image, :link)
   end
 end
