@@ -1,3 +1,5 @@
 /*
+*= require bootstrap/dist/css/bootstrap
+*= require tag-it/css/jquery.tagit
 *=require_tree ./visitor
 */

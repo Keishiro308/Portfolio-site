@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="title-wrapper">
+    <h1><%= @article.title %></h1>
+    <span><%= @article.created_at.strftime("%Y/%m/%d") %></span>
+  </div>
+  <hr>
+  <div class="content-wrapper">
+    <div class="artilce-thumbnail-wrapper">
+      <%= image_tag(@article.thumbnail.url) %>
+    </div>
+    <%= sanitize(@article.content) %>
+  </div>
+</div>

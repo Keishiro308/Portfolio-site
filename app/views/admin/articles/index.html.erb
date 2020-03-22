@@ -1,8 +1,27 @@
-<% @title = '記事投稿' %>
-<h1><%= @title %></h1>
-
-<% @articles.each do |article| %>
-  <div>
-  <%= link_to article.title, [:admin, article] %>
+<% @title = '記事一覧' %>
+<div class="article_area">
+  <h1><%= @title %></h1>
+  <div class="article_wrap">
+    <% @articles.each do |article| %>
+      <div class='article_card'>
+        <div class="article_image">
+          <% unless article.thumbnail.url.nil?  %>
+            <%= image_tag(article.thumbnail.url) %>
+          <% end %>
+        </div>
+        
+        <%= link_to article.title, [:admin, article] %>
+        <div class="publish_wrap">
+          <%= article.published_at.strftime("%Y/%m/%d") %>
+          <%= content_tag(:span, '未公開', class: 'unpublish-tag') if article.unpublished? %>
+        </div>
+        <div class="actions">
+          <%= link_to  "編集", [:edit, :admin, article] %>
+          <%= link_to  "削除", [:admin, article], method: :delete,
+          data: { confirm: '本当に削除しますか？' } %>
+        </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+

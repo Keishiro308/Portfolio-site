@@ -1,5 +1,19 @@
-<header>
-  <span class="logo-mark">暇な文系学生</span>
-  <span>ホーム</span>
-  <span>ポートフォリオ</span>
+<header class='navbar navbar-expand-lg header navbar-light'>
+  <div class="logo-mark"><%= link_to  "Blog", :visitor_root %></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" 
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="link_wrapper collapse navbar-collapse" id='menu'>
+    <ul class='navbar-nav mr-auto'>
+      <li class="link nav-item">
+        <%= link_to 'Home', :visitor_root, class:'nav-link' %>
+        <span>ホーム</span>
+      </li>
+      <li class="link nav-item">
+        <%= link_to 'Portfolio', :visitor_portfolios, class: 'nav-link' %>
+        <span>ポートフォリオ</span>
+      </li>
+    </ul>
+  </div>
 </header>

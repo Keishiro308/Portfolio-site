@@ -1,2 +1,25 @@
-<% @title = 'トップページ' %>
-<h1><%= @title %></h1>
+<div class="wrapper">
+  
+  <div class="article_area">
+    <div class="article_wrap">
+      <% @articles.each do |article| %>
+        <div class='article_card'>
+          <div class="article_image">
+            <% unless article.thumbnail.url.nil?  %>
+              <%= link_to [:visitor, article] do %>
+                <%= image_tag(article.thumbnail.url) %>
+              <% end %>
+            <% end %>
+          </div>
+          
+          <%= link_to article.title, [:visitor, article] %>
+          <div class="publish_wrap">
+            <i class="far fa-clock"></i>
+            <%= article.published_at.strftime("%Y/%m/%d") %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+</div>

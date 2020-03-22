@@ -1,0 +1,98 @@
+// Place all the styles related to the visitor/articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'color';
+@import './mediaquery';
+
+.article_area{
+  width: 70%;
+  margin: 0 auto;
+  .article_wrap{
+    display: flex;
+    flex-wrap: wrap;
+    .article_card{
+      width: 33.3%;
+      .article_image{
+        img{
+          width: 100%;
+          height: 300px;
+        }
+      }
+      .publish_wrap{
+        .unpublish-tag{
+          background-color: $red;
+          color: #ffffff;
+          border-radius: 3px;
+          padding: 2px 3px;
+        }
+      }
+    }
+  }
+}
+@include tablet{
+  .article_area{
+    width: 95%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    .article_wrap{
+      display: flex;
+      flex-wrap: wrap;
+      .article_card{
+        width: 33.3%;
+        .article_image{
+          img{
+            width: 100%;
+            height: 200px;
+          }
+        }
+        .publish_wrap{
+          .unpublish-tag{
+            background-color: $red;
+            color: #ffffff;
+            border-radius: 3px;
+            padding: 2px 3px;
+          }
+        }
+      }
+    }
+  }
+}
+@include smartphone{
+  .article_area{
+    width: 90%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    .article_wrap{
+      display: flex;
+      flex-wrap: wrap;
+      .article_card{
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 15px;
+        border: 1px solid #333333;
+        .article_image{
+          a{
+            img{
+              width: 100%;
+              height: 180px;
+            }
+          }
+        }
+        a{
+          font-size: 35px;
+          display: block;
+          text-align: center;
+          color: #000;
+        }
+        .publish_wrap{
+          .unpublish-tag{
+            background-color: $red;
+            color: #ffffff;
+            border-radius: 3px;
+            padding: 2px 3px;
+          }
+        }
+      }
+    }
+  }
+}

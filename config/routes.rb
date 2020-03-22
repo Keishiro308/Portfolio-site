@@ -7,8 +7,12 @@ Rails.application.routes.draw do
     delete 'session' => 'sessions#destroy'
     resources :portfolios, except: %i[show]
     resources :articles
+    resources :users, only: %i[edit update]
+    resources :article_images, only: %i[create destroy]
   end
   namespace :visitor, path: '' do
     root 'top#index'
+    resources :portfolios, only: %i[index show]
+    resources :articles, only: %i[show]
   end
 end

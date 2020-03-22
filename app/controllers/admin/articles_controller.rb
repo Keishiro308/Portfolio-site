@@ -1,6 +1,6 @@
 class Admin::ArticlesController < Admin::Base
   def index
-    @articles = Article.order(created_at: :desc)
+    @articles = Article.order(published_at: :desc)
   end
 
   def show
@@ -13,7 +13,9 @@ class Admin::ArticlesController < Admin::Base
 
   def create
     @article = Article.new(article_params)
+    tag_list = params[:tags].split(',')
     if @article.save
+      @article.save_tags(tag_list)
       flash.notice = '記事を作成しました。'
       redirect_to :admin_articles
     else
@@ -37,9 +39,16 @@ class Admin::ArticlesController < Admin::Base
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    flash.notice = '記事を削除しました。'
+    redirect_to :admin_articles
+  end
+
   private
   def article_params
-    params.require(:article).permit(:title, :content, :image)
+    params.require(:article).permit(:title, :content, :thumbnail, :published_at, :tags)
   end
 
 end

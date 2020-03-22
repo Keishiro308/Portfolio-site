@@ -1,10 +1,33 @@
-<header>
-  <span class="logo-mark">暇な文系学生</span>
-  <%if current_admin %>
-    <%= link_to 'ログアウト', :admin_session, method: :delete %>
-    <%= link_to 'ポートフォリオ', :admin_portfolios %>
-    <%= link_to  "記事", :admin_articles %>
-  <%else%>
-    <%= link_to 'ログイン', :admin_login %>
-  <%end%>
+<header class='navbar navbar-expand-lg header'>
+  <div class="logo-mark"><%= link_to  "Blog", :admin_root %></div>
+  <div class="link_wrapper">
+    <%if current_admin %>
+      <div class="link">
+        <%= link_to 'Logout', :admin_session, method: :delete %>
+        <br>
+        <span>ログアウト</span>
+      </div>
+      <div class="link">
+        <%= link_to 'Portfolio', :admin_portfolios %>
+        <br>
+        <span>ポートフォリオ</span>
+      </div>
+      <div class="link">
+        <%= link_to  "Article", :admin_articles %>
+        <br>
+        <span>記事</span>
+      </div>
+      <div class="link">
+        <%= link_to  "User", [:edit, :admin, current_admin] %>
+        <br>
+        <span>ユーザー情報編集</span>
+      </div>
+    <%else%>
+      <div class="link">
+        <%= link_to 'Login', :admin_login %>
+        <br>
+        <span>ログイン</span>
+      </div>
+    <%end%>
+  </div>
 </header>

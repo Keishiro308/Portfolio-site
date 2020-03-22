@@ -1,7 +1,13 @@
-<%= form_with model: @article, url: [:admin, @article] do |f| %>
-<%= render 'form', f: f %>
-<div class="buttons">
-  <%= f.submit '更新' %>
-  <%= link_to  "キャンセル", :admin_articles %>
+<div class="form_wrapper">
+<% @title = '記事更新' %>
+  <div class="form">
+    <h1><%= @title %></h1>
+    <%= form_with model: @article, url: [:admin, @article] do |f| %>
+    <%= render 'form', f: f, a: @article %>
+    <div class="buttons">
+      <%= f.submit '更新' %>
+      <%= link_to  "キャンセル", :admin_articles %>
+    </div>
+    <% end %>
+  </div>
 </div>
-<% end %>

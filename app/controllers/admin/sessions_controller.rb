@@ -1,4 +1,5 @@
 class Admin::SessionsController < Admin::Base
+  skip_before_action :authenticate
   def new
     if current_admin
       redirect_to :admin_root
@@ -18,7 +19,7 @@ class Admin::SessionsController < Admin::Base
       session[:administrator_id] = admin.id
       redirect_to :admin_root
     else
-      flash.alert = 'ログインできませんでした。'
+      flash.now.alert = 'ログインできませんでした。'
       render action: 'new'
     end
   end
