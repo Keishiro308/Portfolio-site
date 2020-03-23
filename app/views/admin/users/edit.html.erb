@@ -1,14 +1,18 @@
-<%= form_with model: @user, url: :admin_user do |f| %>
-  <div class="form-group">
-    <%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email, required: true, class: 'form-control' %>
+<div class="form_wrapper">
+  <div class="form">
+  <%= form_with model: @user, url: :admin_user do |f| %>
+    <div class="form-group">
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email, required: true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :new_password, "新しいパスワード" %>
+      <%= f.password_field :new_password, class: 'form-control' %>
+    </div>
+    <div class="buttons">
+      <%= f.submit '更新', class: 'btn btn-dark' %>
+      <%= link_to  "キャンセル", :admin_root %>
+    </div>
+  <% end %>
   </div>
-  <div class="form-group">
-    <%= f.label :new_password, "新しいパスワード" %>
-    <%= f.password_field :new_password, class: 'form-control' %>
-  </div>
-  <div class="buttons">
-    <%= f.submit '更新' %>
-    <%= link_to  "キャンセル", :admin_root %>
-  </div>
-<% end %>
+</div>

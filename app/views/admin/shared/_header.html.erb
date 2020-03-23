@@ -1,33 +1,38 @@
-<header class='navbar navbar-expand-lg header'>
-  <div class="logo-mark"><%= link_to  "Blog", :admin_root %></div>
-  <div class="link_wrapper">
-    <%if current_admin %>
-      <div class="link">
-        <%= link_to 'Logout', :admin_session, method: :delete %>
-        <br>
+<header class='navbar navbar-expand-lg header navbar-light'>
+  <div class="logo-mark"><%= link_to  "Blog", :visitor_root %></div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu" 
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="link_wrapper collapse navbar-collapse" id='menu'>
+    <ul class='navbar-nav mr-auto'>
+      <%if current_admin %>
+      <li class="link nav-item">
+        <%= link_to 'Home', :admin_root, class:'nav-link' %>
+        <span>ホーム</span>
+      </li>
+      <li class="link nav-item">
+        <%= link_to 'Logout', :admin_session, method: :delete, class:'nav-link' %>
         <span>ログアウト</span>
-      </div>
-      <div class="link">
-        <%= link_to 'Portfolio', :admin_portfolios %>
-        <br>
-        <span>ポートフォリオ</span>
-      </div>
-      <div class="link">
-        <%= link_to  "Article", :admin_articles %>
-        <br>
+      </li>
+      <li class="link nav-item">
+        <%= link_to  "Article", :admin_articles, class: 'nav-link' %>
         <span>記事</span>
-      </div>
-      <div class="link">
-        <%= link_to  "User", [:edit, :admin, current_admin] %>
-        <br>
+      </li>
+      <li class="link nav-item">
+        <%= link_to  "User", [:edit, :admin, current_admin], class: 'nav-link' %>
         <span>ユーザー情報編集</span>
-      </div>
+      </li>
+      <li class="link nav-item">
+        <%= link_to 'Portfolio', :admin_portfolios, class: 'nav-link' %>
+        <span>ポートフォリオ</span>
+      </li>
     <%else%>
-      <div class="link">
-        <%= link_to 'Login', :admin_login %>
-        <br>
+      <li class="link nav-item">
+        <%= link_to 'Login', :admin_login, class: 'nav-link' %>
         <span>ログイン</span>
-      </div>
-    <%end%>
+      </li>
+    <% end %>
+    </ul>
   </div>
 </header>
