@@ -1,4 +1,6 @@
 /*
 *= require bootstrap/dist/css/bootstrap
+*= require tag-it/css/jquery.tagit.css
+*= require tag-it/css/tagit.ui-zendesk.css
 *=require_tree ./admin
 */

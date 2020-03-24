@@ -1,20 +1,11 @@
 <footer class='footer'>
   <div class="tags">
+    <h5>タグ</h5>
     <ul>
-      <li>ruby</li>
-      <li>rails</li>
-      <li>javascript</li>
-      <li>html</li>
-      <li>css</li>
+      <% Tag.all.each do |tag| %>
+        <li><%= tag.name %></li>
+      <% end %>
     </ul>
   </div>
-  <div class="tags">
-    <ul>
-      <li>ruby</li>
-      <li>rails</li>
-      <li>javascript</li>
-      <li>html</li>
-      <li>css</li>
-    </ul>
-  </div>
+  <p class='copyright'>&copy;Kei</p>
 </footer>

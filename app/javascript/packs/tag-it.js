@@ -1,6 +1,7 @@
+require('jqueryui/jquery-ui.min')
 require('tag-it/js/tag-it.min')
 
-require('jquery-ui-dist/jquery-ui.min')
+
 
 $(document).on('turbolinks:load' ,function() {
   $("#tag-input").tagit({
@@ -20,3 +21,4 @@ $(document).on('turbolinks:load' ,function() {
     
   }
 });
+

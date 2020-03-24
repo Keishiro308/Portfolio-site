@@ -1,8 +1,12 @@
 footer.footer{
-  display: flex;
   background-color: #000000;
   div.tags{
     width: 50%;
     color: #ffffff;
+  }
+  p.copyright{
+    text-align: center;
+    color: #ffffff;
+    margin: 0;
   }
 }

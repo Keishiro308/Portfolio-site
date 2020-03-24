@@ -1,5 +1,9 @@
 class Visitor::TopController < ApplicationController
   def index
-    @articles = Article.published_articles.order(created_at: :desc)
+    if params[:tag]
+      @articles = Tag.find(params[:tag]).articles.includes(:tags)
+    else
+      @articles = Article.order(published_at: :desc).includes(:tags)
+    end
   end
 end

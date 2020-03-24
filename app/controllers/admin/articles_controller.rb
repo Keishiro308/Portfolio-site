@@ -1,6 +1,10 @@
 class Admin::ArticlesController < Admin::Base
   def index
-    @articles = Article.order(published_at: :desc)
+    if params[:tag]
+      @articles = Tag.find(params[:tag]).articles.includes(:tags)
+    else
+      @articles = Article.order(published_at: :desc).includes(:tags)
+    end
   end
 
   def show
@@ -13,9 +17,9 @@ class Admin::ArticlesController < Admin::Base
 
   def create
     @article = Article.new(article_params)
-    # tag_list = params[:tags].split(',')
+    tag_list = params[:tags].split(',')
     if @article.save
-      # @article.save_tags(tag_list)
+      @article.save_tags(tag_list)
       flash.notice = '記事を作成しました。'
       redirect_to :admin_articles
     else
@@ -26,11 +30,14 @@ class Admin::ArticlesController < Admin::Base
 
   def edit
     @article = Article.find(params[:id])
+    @tag_list = @article.tags.pluck(:name).join(',')
   end
 
   def update
     @article = Article.find(params[:id])
+    tag_list = params[:tags].split(',')
     if @article.update(article_params)
+      @article.save_tags(tag_list)
       flash.notice = '記事を更新できました。'
       redirect_to :admin_articles
     else

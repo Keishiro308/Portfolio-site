@@ -17,6 +17,13 @@
             <i class="far fa-clock"></i>
             <%= article.published_at.strftime("%Y/%m/%d") %>
           </div>
+          <div class="tags-wrap">
+            <% article.tags.each do |tag| %>
+              <span class="tag">
+                <%= link_to  "#{tag.name}", visitor_root_path(tag: tag.id) %>
+              </span>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>
