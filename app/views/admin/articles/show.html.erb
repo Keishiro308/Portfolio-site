@@ -1,3 +1,17 @@
-<div><%= @article.title %></div>
-<div><%= sanitize(@article.content) %></div>
-<%= link_to  "編集", [:edit, :admin, @article] %>
+<%= link_to  "編集", [:edit, :admin, @article], class: 'btn btn-dark' %>
+
+<div class="article">
+  <h1><%= @article.title %></h1>
+  <div class="article_publish_wrap">
+    <i class="far fa-clock"></i>
+    <%= @article.published_at.strftime('%Y/%m/%d') %>
+  </div>
+  <div class="article_image_wrap">
+    <%= image_tag(@article.thumbnail.url) %>
+  </div>
+  <hr>
+  <div class="article_content">
+    <%= sanitize @article.content %>
+  </div>
+</div>
+<%= link_to  "編集", [:edit, :admin, @article], class: 'btn btn-dark' %>

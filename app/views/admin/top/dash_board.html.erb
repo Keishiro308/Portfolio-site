@@ -1,2 +1,12 @@
 <% @title = 'ダッシュボード' %>
-<%= @title %>
+<h1><%= @title %></h1>
+
+<div class="dash_board_wrap">
+  <div class="article_dash_board">
+    <h2><%= link_to  "記事", :admin_articles %> <%= @articles.size %>件</h2>
+  </div>
+  <div class="portfolio_dash_board">
+    <h2><%= link_to  "ポートフォリオ", :admin_portfolios %><%= @portfolios.size %>件</h2>
+  </div>
+</div>
+

@@ -9,7 +9,9 @@
         <div class="portfolio-info">
           <h4><%= p.name %></h4>
           <p><span>詳細：</span><%= p.detail %></p>
-          リンク：<%= link_to  "#{p.link}", p.link %>
+          <div class="link">
+            リンク：<%= link_to  "#{p.link}", p.link %>
+          </div>
           <br>
           <%= link_to  "編集", [:edit, :admin, p] %>
           <%= link_to  "削除", [:admin, p], method: :delete,

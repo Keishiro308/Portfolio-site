@@ -10,8 +10,9 @@
           <% end %>
         </div>
         
-        <%= link_to article.title, [:admin, article] %>
+        <h4><%= link_to article.title, [:admin, article] %></h4>
         <div class="publish_wrap">
+          <i class="far fa-clock"></i>
           <%= article.published_at.strftime("%Y/%m/%d") %>
           <%= content_tag(:span, '未公開', class: 'unpublish-tag') if article.unpublished? %>
         </div>

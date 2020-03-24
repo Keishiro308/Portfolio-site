@@ -18,6 +18,13 @@
           height: 300px;
         }
       }
+      h4{
+        a{
+          text-decoration: none;
+          text-align: center;
+          display: block;
+        }
+      }
       .publish_wrap{
         .unpublish-tag{
           background-color: $red;

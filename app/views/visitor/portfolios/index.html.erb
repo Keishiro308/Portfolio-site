@@ -1,13 +1,17 @@
-<div class="wrapper">
-  <% @portfolios.each do |portfolio| %>
-    <div class="portfolio-card">
-      <div class="portfolio-image">
-        <%= image_tag(portfolio.image.url) %>
+
+<div class="wrap">
+  <div class="portfolio-wrap">
+  <% @portfolios.each do |p| %>
+      <div class="portfolio-card">
+        <div class="portfolio-image">
+          <%= image_tag(p.image.url) %>
+        </div>
+        <div class="portfolio-info">
+          <h4><%= link_to p.name, [:visitor, p] %></h4>
+          <p><span>詳細：</span><%= p.detail %></p>
+          リンク：<%= link_to  "#{p.link}", p.link %>
+        </div>      
       </div>
-      <div class="portfolio-info">
-        <h5><%= link_to  portfolio.name, [:visitor, portfolio] %></h5>
-        <p><%= portfolio.detail %></p>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

@@ -13,9 +13,9 @@ class Admin::ArticlesController < Admin::Base
 
   def create
     @article = Article.new(article_params)
-    tag_list = params[:tags].split(',')
+    # tag_list = params[:tags].split(',')
     if @article.save
-      @article.save_tags(tag_list)
+      # @article.save_tags(tag_list)
       flash.notice = '記事を作成しました。'
       redirect_to :admin_articles
     else
