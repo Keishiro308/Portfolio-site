@@ -59,3 +59,5 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'rmagick'
 gem 'dotenv-rails'
+
+gem 'kaminari'

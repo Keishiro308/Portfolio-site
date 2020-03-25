@@ -1,6 +1,7 @@
 <div class="wrapper">
   
   <div class="article_area">
+    <%= paginate @articles %>
     <div class="article_wrap">
       <% @articles.each do |article| %>
         <div class='article_card'>
@@ -27,6 +28,7 @@
         </div>
       <% end %>
     </div>
+    <%= paginate @articles %>
   </div>
   
 </div>

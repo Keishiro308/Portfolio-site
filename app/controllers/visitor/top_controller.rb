@@ -5,5 +5,6 @@ class Visitor::TopController < ApplicationController
     else
       @articles = Article.order(published_at: :desc).includes(:tags)
     end
+    @articles = @articles.page(params[:page])
   end
 end

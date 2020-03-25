@@ -1,9 +1,9 @@
 module ApplicationHelper
   def document_title
     if @title.present?
-      "#{@title}-暇な文系学生"
+      "#{@title}-KIROKU"
     else
-      '暇な文系学生'
+      'KIROKU'
     end
   end
 end

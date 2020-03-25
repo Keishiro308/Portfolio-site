@@ -1,6 +1,7 @@
 <div class="wrap">
   <%= link_to  "追加", :new_admin_portfolio, class: 'btn btn-dark' %>
   <div class="portfolio-wrap">
+  <%= paginate @portfolios %>
   <% @portfolios.each do |p| %>
       <div class="portfolio-card">
         <div class="portfolio-image">
@@ -19,6 +20,7 @@
         </div>      
       </div>
     <% end %>
+    <%= paginate @portfolios %>
   </div>
   <%= link_to  "追加", :new_admin_portfolio, class: 'btn btn-dark' %>
 </div>

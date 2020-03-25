@@ -1,6 +1,6 @@
 class Admin::PortfoliosController < Admin::Base
   def index
-    @portfolios = Portfolio.order(created_at: :desc)
+    @portfolios = Portfolio.order(created_at: :desc).page(params[:page])
   end
 
   def new

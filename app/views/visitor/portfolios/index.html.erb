@@ -1,7 +1,8 @@
 
 <div class="wrap">
   <div class="portfolio-wrap">
-  <% @portfolios.each do |p| %>
+    <%= paginate @portfolios %>
+    <% @portfolios.each do |p| %>
       <div class="portfolio-card">
         <div class="portfolio-image">
           <%= image_tag(p.image.url) %>
@@ -9,9 +10,12 @@
         <div class="portfolio-info">
           <h4><%= link_to p.name, [:visitor, p] %></h4>
           <p><span>詳細：</span><%= p.detail %></p>
-          リンク：<%= link_to  "#{p.link}", p.link %>
+          <div class="link">
+            リンク：<%= link_to  "#{p.link}", p.link %>
+          </div>
         </div>      
       </div>
     <% end %>
+    <%= paginate @portfolios %>
   </div>
 </div>
