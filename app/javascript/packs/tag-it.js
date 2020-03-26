@@ -1,6 +1,5 @@
 require('jqueryui/jquery-ui.min')
-require('tag-it/js/tag-it.min')
-
+import './tag-it-change.min';
 
 
 $(document).on('turbolinks:load' ,function() {
