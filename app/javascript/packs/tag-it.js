@@ -1,6 +1,5 @@
 require('jqueryui/jquery-ui.min')
-import './tag-it-change.min';
-
+require('./tag-it-change.min')
 
 $(document).on('turbolinks:load' ,function() {
   $("#tag-input").tagit({
